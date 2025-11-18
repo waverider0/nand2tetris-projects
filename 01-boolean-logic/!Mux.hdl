@@ -1,0 +1,11 @@
+// if sel: out = b; else: out = a
+CHIP Mux {
+  IN a, b, sel;
+  OUT out;
+
+  PARTS:
+  Not(in=sel, out=NOTsel);
+  And(a=a, b=NOTsel, out=aANDNOTsel);
+  And(a=b, b=sel, out=bANDsel);
+  Xor(a=aANDNOTsel, b=bANDsel, out=out);
+}
