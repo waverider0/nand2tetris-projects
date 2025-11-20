@@ -1,4 +1,4 @@
-// if a and b: out = 1; else: out = 0
+// if (a and b) out = 1, else out = 0
 CHIP And {
   IN a, b;
   OUT out;
