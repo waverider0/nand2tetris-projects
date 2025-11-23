@@ -4,7 +4,7 @@ CHIP Xor {
   OUT out;
 
   PARTS:
-  Or(a=a, b=b, out=ORab);
-  Nand(a=a, b=b, out=NANDab);
-  And(a=ORab, b=NANDab, out=out);
+    Or(a=a, b=b, out=ORab);
+    Nand(a=a, b=b, out=NANDab);
+    And(a=ORab, b=NANDab, out=out);
 }
