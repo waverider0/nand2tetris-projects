@@ -1,0 +1,6 @@
+<!DOCTYPE SimulIDE>
+<itemlib>
+  <itemset category="nand2tetris" type="MCU">
+    <item name="NAnd" package="NAnd/NAnd" data="NAnd/NAnd"/>
+  </itemset>
+</itemlib>

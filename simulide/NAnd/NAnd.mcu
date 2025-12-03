@@ -1,0 +1,5 @@
+<!DOCTYPE SimulIDE>
+<iou name="NAnd" core="scripted" script="NAnd.as">
+  <ioport name="IN" pins="a,b" />
+  <ioport name="OUT" pins="out" />
+</iou>
