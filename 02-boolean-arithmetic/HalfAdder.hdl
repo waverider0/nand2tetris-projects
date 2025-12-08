@@ -1,8 +1,8 @@
 CHIP HalfAdder {
   IN a, b;
-  OUT sum, car;
+  OUT sum, carry;
 
   PARTS:
     Xor(a=a, b=b, out=sum);
-    And(a=a, b=b, out=car);
+    And(a=a, b=b, out=carry);
 }
