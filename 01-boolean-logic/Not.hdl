@@ -1,4 +1,4 @@
-// if (in) out = 0, else out = 1
+// out = !in
 CHIP Not {
   IN in;
   OUT out;

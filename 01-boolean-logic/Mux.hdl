@@ -1,4 +1,4 @@
-// if (sel = 0) out = a, else out = b
+// out = (sel == 0) ? a : b
 CHIP Mux {
   IN a, b, sel;
   OUT out;

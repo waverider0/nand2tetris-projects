@@ -1,4 +1,4 @@
-// for i in 0..15: out[i] = a[i] if (sel == 0) else b[i]
+// out[i] = (sel == 0) ? a[i] : b[i]
 CHIP Mux16 {
   IN a[16], b[16], sel;
   OUT out[16];

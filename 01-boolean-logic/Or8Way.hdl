@@ -1,4 +1,4 @@
-// out = in[0] or in[1] or ... or in[7]
+// out = in[0] || in[1] || ... || in[7]
 CHIP Or8Way {
   IN in[8];
   OUT out;

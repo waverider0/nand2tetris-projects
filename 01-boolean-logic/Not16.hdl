@@ -1,4 +1,4 @@
-// for i in 0..15: out[i] = Not(in[i])
+// out[i] = !in[i]
 CHIP Not16 {
   IN in[16];
   OUT out[16];
