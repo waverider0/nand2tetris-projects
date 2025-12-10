@@ -1,0 +1,35 @@
+/*
+* out = one of the following:
+* 0, 1, -1,
+* x, y,
+* !x, !y,
+* -x, -y,
+* x+1, y+1,
+* x-1, y-1,
+* x+y, x-y, y-x,
+* x&y, x|y
+*
+* if (zx == 1) x = 0
+* if (nx == 1) x = !x
+* if (zy == 1) y = 0
+* if (ny == 1) y = !y
+* if (f == 1)  out = x + y
+* if (f == 0)  out = x & y
+* if (no == 1) out = !out
+*
+* if (out == 0) zr = 1, else zr = 0
+* if (out < 0)  ng = 1, else ng = 0
+*/
+CHIP ALU {
+  IN
+    x[16], y[16];
+    zx, nx,
+    zy, ny,
+    f,
+    no;
+  OUT
+    out[16],
+    zr, ng;
+
+  PARTS:
+}
