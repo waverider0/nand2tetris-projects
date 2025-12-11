@@ -1,35 +1,39 @@
 /*
-* out = one of the following:
-* 0, 1, -1,
-* x, y,
-* !x, !y,
-* -x, -y,
-* x+1, y+1,
-* x-1, y-1,
-* x+y, x-y, y-x,
-* x&y, x|y
-*
-* if (zx == 1) x = 0
-* if (nx == 1) x = !x
-* if (zy == 1) y = 0
-* if (ny == 1) y = !y
-* if (f == 1)  out = x + y
-* if (f == 0)  out = x & y
-* if (no == 1) out = !out
-*
-* if (out == 0) zr = 1, else zr = 0
-* if (out < 0)  ng = 1, else ng = 0
+  based on the 6 input flags, out = one of the following:
+  101010 -> 0
+  111111 -> 1
+  111010 -> -1
+  001100 -> x
+  110000 -> y
+  001101 -> !x
+  110001 -> !y
+  001111 -> -x
+  110011 -> -y
+  011111 -> x+1
+  110111 -> y+1
+  001110 -> x-1
+  110010 -> y-1
+  000010 -> x+y
+  010011 -> x-y
+  000111 -> y-x
+  000000 -> x&y
+  010101 -> x|y
 */
 CHIP ALU {
   IN
-    x[16], y[16];
-    zx, nx,
-    zy, ny,
-    f,
-    no;
+    x[16], y[16],
+    // NOTE: these transformations are computed in order 
+    zx, // if (zx == 1): x = 0
+    nx, // if (nx == 1): x = !x
+    zy, // if (zy == 1): y = 0
+    ny, // if (ny == 1): y = !y
+    f,  // out = (f == 1) ? x+y : x&y
+    no; // if (no == 1): out = !out
+
   OUT
     out[16],
-    zr, ng;
+    zr, // zr = (out == 0) ? 1 : 0
+    ng; // ng = (out < 0) ? 1 : 0
 
   PARTS:
 }
