@@ -38,6 +38,15 @@ w 432 -80 464 32 0
 w 432 64 464 -48 0
 w 432 -80 464 -80 0
 w 432 64 464 64 0
-M 800 -32 816 -32 0 2.5
-x 837 -28 870 -25 4 24 out
-x 433 -175 566 -172 4 32 1-bit\sALU
+M 848 -32 864 -32 0 2.5
+x 885 -28 918 -25 4 24 out
+x 722 -271 855 -268 4 32 1-bit\sALU
+x 885 4 904 7 4 24 zr
+M 848 0 864 0 0 2.5
+x 884 38 1469 41 4 24 ng\snot\sincluded\s(2s\scomplement\sonly\sworks\sfor\smultibit)
+I 800 0 848 0 0 0.5 5
+w 800 -32 848 -32 0
+w 800 -32 800 0 0
+x 522 -232 1072 -229 4 24 NOTE:\sthe\smultibit\sversion\swill\slook\sslightly\sdifferent:
+x 522 -200 757 -197 4 24 1.\szr\s\q\sNor16Way(out)
+x 522 -165 773 -162 4 24 2.\sng\s\q\sAnd(outMSB,\s1)
