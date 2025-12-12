@@ -1,4 +1,12 @@
 /*
+  input flags (these transformations are done in order):
+  if (zx == 1): x = 0
+  if (nx == 1): x = !x
+  if (zy == 1): y = 0
+  if (ny == 1): y = !y
+  out = (f == 1) ? x+y : x&y
+  if (no == 1): out = !out
+
   based on the 6 input flags, out = one of the following:
   101010 -> 0
   111111 -> 1
@@ -18,22 +26,18 @@
   000111 -> y-x
   000000 -> x&y
   010101 -> x|y
+
+  output flags:
+  zr = (out == 0) ? 1 : 0
+  ng = (out < 0) ? 1 : 0
 */
 CHIP ALU {
   IN
     x[16], y[16],
-    // NOTE: these transformations are computed in order 
-    zx, // if (zx == 1): x = 0
-    nx, // if (nx == 1): x = !x
-    zy, // if (zy == 1): y = 0
-    ny, // if (ny == 1): y = !y
-    f,  // out = (f == 1) ? x+y : x&y
-    no; // if (no == 1): out = !out
-
+    zx, nx, zy, ny, f, no;
   OUT
     out[16],
-    zr, // zr = (out == 0) ? 1 : 0
-    ng; // ng = (out < 0) ? 1 : 0
+    zr, ng;
 
   PARTS:
 }
